@@ -8,6 +8,7 @@ numOfFeatures: 21
 ## X is the feature matrix (m x n) where m is the number of samples and n is the number of features
 ## y is the target vector (m x 1), in this case, is win count
 def calculate_regression_weights(X, y):
+    print(f"Calculating regression weights for X shape: {X.shape} and y shape: {y.shape}")
     # Add column to X for intercept term (bias)
     ones = np.ones((X.shape[0], 1))
     X_b = np.append(ones, X, axis=1)

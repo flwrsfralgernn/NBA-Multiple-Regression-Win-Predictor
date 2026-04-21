@@ -1,6 +1,7 @@
 import numpy as np
 from webscaper import scrapeStatsF1T1Y
 from multipleRegression import predict_win_pct
+import time
 
 # Wrap the values in np.array and add commas between the inner lists
 weights = np.array([
@@ -28,6 +29,9 @@ weights = np.array([
     [ 4.80896924e-02]
 ])
 
-# Now run the prediction
-prediction = predict_win_pct(scrapeStatsF1T1Y(1982), weights)
-print(f"Predicted Win %: {prediction}")
+i = 0
+while i < 30:
+    prediction = predict_win_pct(scrapeStatsF1T1Y(2026, i), weights)
+    time.sleep(3.1)
+    print(f"Predicted Win %: {prediction}")
+    i += 1
